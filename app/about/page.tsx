@@ -20,15 +20,12 @@ export default function AboutPage() {
               <div className="relative group">
                 {/* Photo Container */}
                 <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-gradient-to-br from-border/20 to-accent/5 border border-border">
-                  {/* Placeholder - Replace with actual image */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-accent/10 border-2 border-accent/20 flex items-center justify-center">
-                        <span className="text-4xl font-bold text-accent">NK</span>
-                      </div>
-                      <p className="text-sm text-foreground/40">Professional Photo</p>
-                    </div>
-                  </div>
+                  {/* Photo */}
+                  <img
+                    src="/profile.jpg"
+                    alt="Nand Kishore"
+                    className="w-full h-full object-cover"
+                  />
                   {/* Gradient Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
                 </div>
