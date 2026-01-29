@@ -3,17 +3,19 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { motion } from "framer-motion";
+import { use } from "react";
 import { fadeIn, slideUp, staggerContainer, staggerItem, scrollReveal } from "@/lib/animations";
 import { getProjectById, getOtherProjects } from "@/lib/projectsData";
 
-export default function ProjectPage({ params }: { params: { id: string } }) {
-  const project = getProjectById(params.id);
+export default function ProjectPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = use(params);
+  const project = getProjectById(id);
   
   if (!project) {
     notFound();
   }
 
-  const otherProjects = getOtherProjects(params.id);
+  const otherProjects = getOtherProjects(id);
 
   return (
     <main className="min-h-screen">
