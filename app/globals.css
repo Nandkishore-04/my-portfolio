@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --neon: #FFD60A;
+  --neon-rgb: 255, 214, 10;
+  --surface: #0A0A0A;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-inter), sans-serif;
+  background-color: var(--surface);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+section {
+  scroll-margin-top: 80px;
+}
+
+/* Selection highlight */
+::selection {
+  background-color: rgba(var(--neon-rgb), 0.3);
+  color: #fff;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(var(--neon-rgb), 0.2);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(var(--neon-rgb), 0.4);
+}
+
+/* Neon utility classes */
+@layer utilities {
+  .neon-glow {
+    text-shadow: 0 0 20px rgba(var(--neon-rgb), 0.5), 0 0 40px rgba(var(--neon-rgb), 0.2);
+  }
+
+  .neon-border-glow {
+    box-shadow: 0 0 15px rgba(var(--neon-rgb), 0.15), 0 0 30px rgba(var(--neon-rgb), 0.05);
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
