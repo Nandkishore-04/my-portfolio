@@ -47,7 +47,7 @@ const expoOut: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 export default function About() {
     return (
-        <section id="about" className="relative h-screen flex items-center overflow-hidden bg-surface px-6 scroll-mt-16">
+        <section id="about" className="relative min-h-screen md:h-screen flex items-center overflow-hidden bg-surface px-6 py-20 md:py-0 scroll-mt-16">
             {/* Subtle radial glow */}
             <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(255,214,10,0.04)_0%,transparent_70%)] pointer-events-none" />
 
@@ -93,7 +93,7 @@ export default function About() {
                         {/* Capabilities */}
                         <ScrollReveal delay={0.15}>
                             <p className="font-display text-[11px] uppercase tracking-widest text-white/45 mb-2">What I do</p>
-                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 md:gap-2">
                                 {capabilities.map((cap, i) => (
                                     <motion.div
                                         key={cap.title}
@@ -159,7 +159,7 @@ export default function About() {
                     {/* Right: Photo */}
                     <div className="order-1 md:order-2">
                         <ScrollReveal direction="right" distance={30}>
-                            <div className="w-full aspect-[3/4] rounded-2xl overflow-hidden border border-white/10">
+                            <div className="w-full aspect-square md:aspect-[3/4] rounded-2xl overflow-hidden border border-white/10">
                                 <img
                                     src="/WhatsApp Image 2026-01-29 at 11.23.59 PM.jpeg"
                                     alt="Nand Kishore"

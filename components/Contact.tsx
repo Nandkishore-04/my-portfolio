@@ -59,7 +59,7 @@ export default function Contact() {
     };
 
     return (
-        <section id="contact" className="relative h-screen flex flex-col justify-between overflow-hidden bg-surface px-6 py-16 scroll-mt-16">
+        <section id="contact" className="relative min-h-screen md:h-screen flex flex-col justify-between overflow-hidden bg-surface px-6 py-16 scroll-mt-16">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(255,214,10,0.04)_0%,transparent_60%)] pointer-events-none" />
 
             <div className="relative z-10 flex-1 flex items-center">
@@ -113,7 +113,7 @@ export default function Contact() {
                             onSubmit={handleSubmit}
                             className="bg-surface-raised border border-white/[0.06] rounded-2xl p-6 space-y-4"
                         >
-                            <div className="grid grid-cols-2 gap-3">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                 <div className="space-y-1.5">
                                     <label className="text-[10px] font-display uppercase tracking-widest text-white/30 ml-0.5">Name</label>
                                     <input

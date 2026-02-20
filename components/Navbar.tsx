@@ -81,7 +81,7 @@ export default function Navbar() {
                                 <Link
                                     key={id}
                                     href={`#${id}`}
-                                    className="relative px-4 py-1.5 rounded-full font-display text-xs uppercase tracking-wider transition-colors duration-300"
+                                    className="relative px-3 lg:px-4 py-1.5 rounded-full font-display text-[10px] lg:text-xs uppercase tracking-wider transition-colors duration-300"
                                 >
                                     {isActive && (
                                         <motion.span

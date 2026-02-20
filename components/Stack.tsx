@@ -30,7 +30,7 @@ const expoOut: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 export default function Stack() {
     return (
-        <section id="stack" className="relative h-screen flex items-center overflow-hidden bg-surface px-6 scroll-mt-16">
+        <section id="stack" className="relative min-h-screen md:h-screen flex items-center overflow-hidden bg-surface px-6 py-20 md:py-0 scroll-mt-16">
             <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(255,214,10,0.03)_0%,transparent_70%)] pointer-events-none" />
 
             <div className="relative z-10 max-w-4xl mx-auto w-full">
@@ -55,12 +55,12 @@ export default function Stack() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.4, delay: i * 0.07, ease: expoOut }}
-                            className={`group flex items-center gap-6 px-6 py-5 hover:bg-white/[0.025] transition-colors duration-300 ${
+                            className={`group flex items-center gap-3 md:gap-6 px-4 md:px-6 py-4 md:py-5 hover:bg-white/[0.025] transition-colors duration-300 ${
                                 i < layers.length - 1 ? 'border-b border-white/[0.06]' : ''
                             }`}
                         >
                             {/* Layer label */}
-                            <span className="w-20 text-right font-display text-[11px] uppercase tracking-widest text-white/20 group-hover:text-neon transition-colors duration-300 shrink-0">
+                            <span className="w-16 md:w-20 text-right font-display text-[10px] md:text-[11px] uppercase tracking-widest text-white/20 group-hover:text-neon transition-colors duration-300 shrink-0">
                                 {layer.name}
                             </span>
 
@@ -72,7 +72,7 @@ export default function Stack() {
                                 {layer.items.map((tech) => (
                                     <span
                                         key={tech}
-                                        className="px-3 py-1 text-sm text-white/50 border border-white/[0.08] rounded-full group-hover:text-white/75 group-hover:border-white/15 transition-colors duration-300"
+                                        className="px-2.5 py-0.5 text-xs md:text-sm text-white/50 border border-white/[0.08] rounded-full group-hover:text-white/75 group-hover:border-white/15 transition-colors duration-300"
                                     >
                                         {tech}
                                     </span>
