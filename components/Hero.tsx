@@ -8,7 +8,7 @@ const expoOut: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 export default function Hero() {
     return (
-        <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden bg-surface">
+        <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden bg-surface scroll-mt-16">
             <PixelSnow
                 color="#ffffff"
                 variant="snowflake"

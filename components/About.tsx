@@ -45,7 +45,7 @@ const expoOut: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 export default function About() {
     return (
-        <section id="about" className="relative h-screen flex items-center overflow-hidden bg-surface px-6">
+        <section id="about" className="relative h-screen flex items-center overflow-hidden bg-surface px-6 scroll-mt-16">
             {/* Subtle radial glow */}
             <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(255,214,10,0.04)_0%,transparent_70%)] pointer-events-none" />
 

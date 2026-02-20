@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const sections = ['home', 'projects', 'about', 'contact'] as const;
+const sections = ['home', 'projects', 'about', 'stack', 'contact'] as const;
 
 export default function Navbar() {
     const [activeSection, setActiveSection] = useState<string>('home');

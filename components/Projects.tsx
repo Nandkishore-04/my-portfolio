@@ -45,7 +45,7 @@ export default function Projects() {
     const [activeIndex, setActiveIndex] = useState(0);
 
     return (
-        <section id="projects" className="relative h-screen flex flex-col justify-center overflow-hidden bg-surface">
+        <section id="projects" className="relative h-screen flex flex-col justify-center overflow-hidden bg-surface scroll-mt-16">
             <div className="max-w-7xl mx-auto px-6 w-full">
 
                 {/* Header */}

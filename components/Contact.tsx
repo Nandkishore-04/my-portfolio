@@ -2,188 +2,187 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ScrollReveal, StaggerContainer, staggerChildVariants } from './ScrollReveal';
+import { ScrollReveal } from './ScrollReveal';
+
+const links = [
+    {
+        label: "Email",
+        value: "nkk01414@gmail.com",
+        href: "mailto:nkk01414@gmail.com",
+        external: false,
+    },
+    {
+        label: "GitHub",
+        value: "Nandkishore-04",
+        href: "https://github.com/Nandkishore-04",
+        external: true,
+    },
+    {
+        label: "LinkedIn",
+        value: "nand-kishore",
+        href: "https://www.linkedin.com/in/nand-kishore-8b9093262/",
+        external: true,
+    },
+];
+
+const expoOut: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 export default function Contact() {
-    const [formState, setFormState] = useState({
-        name: '',
-        email: '',
-        message: ''
-    });
-
+    const [formState, setFormState] = useState({ name: '', email: '', message: '' });
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitted, setSubmitted] = useState(false);
+
+    const FORMSPREE_URL = 'https://formspree.io/f/YOUR_FORM_ID'; // replace with your Formspree endpoint
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
-        await new Promise(resolve => setTimeout(resolve, 1500));
-        setIsSubmitting(false);
-        setSubmitted(true);
-        setFormState({ name: '', email: '', message: '' });
-        setTimeout(() => setSubmitted(false), 5000);
+        try {
+            const res = await fetch(FORMSPREE_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    name: formState.name,
+                    email: formState.email,
+                    message: formState.message,
+                }),
+            });
+            if (!res.ok) throw new Error('Failed');
+            setSubmitted(true);
+            setFormState({ name: '', email: '', message: '' });
+            setTimeout(() => setSubmitted(false), 5000);
+        } catch {
+            alert('Something went wrong. Please email me directly at nkk01414@gmail.com');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
-        <section id="contact" className="relative min-h-screen py-24 px-6 bg-surface overflow-hidden">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(255,214,10,0.03)_0%,transparent_50%)]" />
+        <section id="contact" className="relative h-screen flex flex-col justify-between overflow-hidden bg-surface px-6 py-16 scroll-mt-16">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(255,214,10,0.04)_0%,transparent_60%)] pointer-events-none" />
 
-            <div className="relative z-10 max-w-6xl mx-auto">
-                <ScrollReveal>
-                    <div className="mb-16 space-y-3">
-                        <p className="font-display text-xs uppercase tracking-widest text-neon">Get In Touch</p>
-                        <h2 className="font-display text-4xl md:text-5xl font-bold text-white tracking-tight">
-                            Let&apos;s Work Together
-                        </h2>
-                        <p className="text-white/40 text-sm">Have a project in mind? Let&apos;s talk.</p>
-                    </div>
-                </ScrollReveal>
+            <div className="relative z-10 flex-1 flex items-center">
+                <div className="max-w-5xl mx-auto w-full grid md:grid-cols-[1fr_1.4fr] gap-10 items-center">
 
-                <div className="grid lg:grid-cols-[1fr_1.5fr] gap-12 items-start">
-                    {/* Left: Contact Info */}
-                    <div className="space-y-8">
-                        <StaggerContainer className="grid gap-4">
-                            {[
-                                {
-                                    title: "Email",
-                                    value: "hello@example.com",
-                                    icon: (
-                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                        </svg>
-                                    ),
-                                    link: "mailto:hello@example.com"
-                                },
-                                {
-                                    title: "Location",
-                                    value: "Your City, Country",
-                                    icon: (
-                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                                        </svg>
-                                    ),
-                                    link: "#"
-                                },
-                                {
-                                    title: "LinkedIn",
-                                    value: "linkedin.com/in/you",
-                                    icon: (
-                                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                                        </svg>
-                                    ),
-                                    link: "#"
-                                }
-                            ].map((item, i) => (
+                    {/* Left */}
+                    <div>
+                        <ScrollReveal>
+                            <p className="font-display text-xs uppercase tracking-widest text-neon mb-3">Contact</p>
+                            <h2 className="font-display text-3xl md:text-4xl font-bold text-white leading-tight mb-2">
+                                Let&apos;s build something.
+                            </h2>
+                            <p className="text-white/35 text-sm mb-8 leading-relaxed">
+                                Open to freelance projects and full-time roles. Based in Chennai — available remotely.
+                            </p>
+                        </ScrollReveal>
+
+                        <div className="flex flex-col gap-2">
+                            {links.map((link, i) => (
                                 <motion.a
-                                    key={i}
-                                    variants={staggerChildVariants}
-                                    href={item.link}
-                                    className="group flex items-center gap-5 p-5 bg-surface-raised border border-white/5 rounded-2xl hover:border-neon/20 transition-all duration-300"
+                                    key={link.label}
+                                    href={link.href}
+                                    target={link.external ? '_blank' : undefined}
+                                    rel={link.external ? 'noopener noreferrer' : undefined}
+                                    initial={{ opacity: 0, x: -12 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.4, delay: 0.1 + i * 0.07, ease: expoOut }}
+                                    className="group flex items-center justify-between px-4 py-3 bg-surface-raised border border-white/5 rounded-xl hover:border-neon/25 hover:bg-white/[0.02] transition-all duration-300"
                                 >
-                                    <div className="w-10 h-10 bg-neon/10 rounded-xl flex items-center justify-center text-neon group-hover:scale-110 transition-transform">
-                                        {item.icon}
+                                    <div className="flex items-center gap-3">
+                                        <span className="font-display text-[10px] uppercase tracking-widest text-white/20 w-12">
+                                            {link.label}
+                                        </span>
+                                        <span className="w-px h-3 bg-white/10" />
+                                        <span className="text-sm text-white/60 group-hover:text-white transition-colors duration-300">
+                                            {link.value}
+                                        </span>
                                     </div>
-                                    <div>
-                                        <h4 className="text-white/40 text-[10px] font-display font-bold uppercase tracking-widest mb-0.5">{item.title}</h4>
-                                        <p className="text-white text-sm font-medium">{item.value}</p>
-                                    </div>
+                                    <span className="text-white/20 group-hover:text-neon group-hover:translate-x-0.5 transition-all duration-300 text-sm">
+                                        {link.external ? '↗' : '→'}
+                                    </span>
                                 </motion.a>
                             ))}
-                        </StaggerContainer>
+                        </div>
                     </div>
 
-                    {/* Right: Contact Form */}
-                    <ScrollReveal direction="right" distance={40} delay={0.2}>
-                        <div className="relative group">
-                            <div className="absolute -inset-1 bg-gradient-to-r from-neon/10 to-transparent rounded-[2rem] blur-2xl opacity-50 transition-opacity group-hover:opacity-70" />
-
-                            <form
-                                onSubmit={handleSubmit}
-                                className="relative bg-surface-raised backdrop-blur-xl border border-white/5 rounded-[2rem] p-8 md:p-10 space-y-5"
-                            >
-                                <div className="grid md:grid-cols-2 gap-5">
-                                    <div className="space-y-1.5">
-                                        <label className="text-[10px] font-display font-bold text-white/40 uppercase tracking-widest ml-1">Name</label>
-                                        <input
-                                            required
-                                            type="text"
-                                            placeholder="Your name"
-                                            className="w-full bg-[#0A0A0A] border border-white/5 rounded-xl px-5 py-3.5 text-white text-sm placeholder:text-white/20 focus:outline-none focus:border-neon/50 focus:shadow-[0_0_10px_rgba(255,214,10,0.1)] transition-all"
-                                            value={formState.name}
-                                            onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                                        />
-                                    </div>
-                                    <div className="space-y-1.5">
-                                        <label className="text-[10px] font-display font-bold text-white/40 uppercase tracking-widest ml-1">Email</label>
-                                        <input
-                                            required
-                                            type="email"
-                                            placeholder="you@example.com"
-                                            className="w-full bg-[#0A0A0A] border border-white/5 rounded-xl px-5 py-3.5 text-white text-sm placeholder:text-white/20 focus:outline-none focus:border-neon/50 focus:shadow-[0_0_10px_rgba(255,214,10,0.1)] transition-all"
-                                            value={formState.email}
-                                            onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                                        />
-                                    </div>
-                                </div>
-
+                    {/* Right: Form */}
+                    <ScrollReveal direction="right" distance={30} delay={0.15}>
+                        <form
+                            onSubmit={handleSubmit}
+                            className="bg-surface-raised border border-white/[0.06] rounded-2xl p-6 space-y-4"
+                        >
+                            <div className="grid grid-cols-2 gap-3">
                                 <div className="space-y-1.5">
-                                    <label className="text-[10px] font-display font-bold text-white/40 uppercase tracking-widest ml-1">Message</label>
-                                    <textarea
+                                    <label className="text-[10px] font-display uppercase tracking-widest text-white/30 ml-0.5">Name</label>
+                                    <input
                                         required
-                                        rows={4}
-                                        placeholder="What's on your mind?"
-                                        className="w-full bg-[#0A0A0A] border border-white/5 rounded-xl px-5 py-3.5 text-white text-sm placeholder:text-white/20 focus:outline-none focus:border-neon/50 focus:shadow-[0_0_10px_rgba(255,214,10,0.1)] transition-all resize-none"
-                                        value={formState.message}
-                                        onChange={(e) => setFormState({ ...formState, message: e.target.value })}
+                                        type="text"
+                                        placeholder="Your name"
+                                        className="w-full bg-black/30 border border-white/[0.07] rounded-xl px-4 py-3 text-white text-sm placeholder:text-white/20 focus:outline-none focus:border-neon/40 transition-all"
+                                        value={formState.name}
+                                        onChange={(e) => setFormState({ ...formState, name: e.target.value })}
                                     />
                                 </div>
+                                <div className="space-y-1.5">
+                                    <label className="text-[10px] font-display uppercase tracking-widest text-white/30 ml-0.5">Email</label>
+                                    <input
+                                        required
+                                        type="email"
+                                        placeholder="you@example.com"
+                                        className="w-full bg-black/30 border border-white/[0.07] rounded-xl px-4 py-3 text-white text-sm placeholder:text-white/20 focus:outline-none focus:border-neon/40 transition-all"
+                                        value={formState.email}
+                                        onChange={(e) => setFormState({ ...formState, email: e.target.value })}
+                                    />
+                                </div>
+                            </div>
 
-                                <button
-                                    type="submit"
-                                    disabled={isSubmitting}
-                                    className={`w-full relative group/btn py-4 px-8 rounded-xl font-bold font-display transition-all overflow-hidden ${
-                                        submitted
-                                            ? 'bg-neon text-black'
-                                            : 'bg-neon text-black hover:shadow-[0_0_30px_rgba(255,214,10,0.3)] hover:scale-[1.02] active:scale-[0.98]'
-                                    }`}
-                                >
-                                    <span className="relative z-10 flex items-center justify-center gap-2">
-                                        {isSubmitting ? (
-                                            <>
-                                                <svg className="animate-spin h-5 w-5 text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                                                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                                                </svg>
-                                                Sending...
-                                            </>
-                                        ) : submitted ? (
-                                            "Sent!"
-                                        ) : (
-                                            <>
-                                                Send Message
-                                                <span className="group-hover/btn:translate-x-1 transition-transform">→</span>
-                                            </>
-                                        )}
+                            <div className="space-y-1.5">
+                                <label className="text-[10px] font-display uppercase tracking-widest text-white/30 ml-0.5">Message</label>
+                                <textarea
+                                    required
+                                    rows={4}
+                                    placeholder="What are you building?"
+                                    className="w-full bg-black/30 border border-white/[0.07] rounded-xl px-4 py-3 text-white text-sm placeholder:text-white/20 focus:outline-none focus:border-neon/40 transition-all resize-none"
+                                    value={formState.message}
+                                    onChange={(e) => setFormState({ ...formState, message: e.target.value })}
+                                />
+                            </div>
+
+                            <button
+                                type="submit"
+                                disabled={isSubmitting}
+                                className="w-full py-3.5 px-6 bg-neon text-black font-bold font-display text-sm rounded-xl hover:shadow-[0_0_24px_rgba(255,214,10,0.25)] hover:scale-[1.01] active:scale-[0.99] transition-all duration-300 disabled:opacity-70"
+                            >
+                                {isSubmitting ? (
+                                    <span className="flex items-center justify-center gap-2">
+                                        <svg className="animate-spin h-4 w-4" fill="none" viewBox="0 0 24 24">
+                                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                                        </svg>
+                                        Sending...
                                     </span>
-                                </button>
-                            </form>
-                        </div>
+                                ) : submitted ? (
+                                    'Message sent!'
+                                ) : (
+                                    <span className="flex items-center justify-center gap-2">
+                                        Send Message <span>→</span>
+                                    </span>
+                                )}
+                            </button>
+                        </form>
                     </ScrollReveal>
-                </div>
 
-                {/* Footer */}
-                <ScrollReveal delay={0.1}>
-                    <div className="mt-32 pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6 text-white/40 text-sm font-medium">
-                        <p>&copy; 2026 Nand Kishore</p>
-                        <div className="flex gap-8">
-                            <a href="https://github.com/Nandkishore-04" className="hover:text-neon transition-colors">GitHub</a>
-                            <a href="#" className="hover:text-neon transition-colors">LinkedIn</a>
-                            <a href="#" className="hover:text-neon transition-colors">Twitter</a>
-                        </div>
-                    </div>
-                </ScrollReveal>
+                </div>
+            </div>
+
+            {/* Footer */}
+            <div className="relative z-10 max-w-5xl mx-auto w-full">
+                <div className="pt-6 border-t border-white/[0.06] flex flex-col md:flex-row items-center justify-between gap-2 text-white/20 text-xs font-display">
+                    <p>© 2026 Nand Kishore · Chennai, India</p>
+                    <p className="uppercase tracking-widest">Built with Next.js</p>
+                </div>
             </div>
         </section>
     );
