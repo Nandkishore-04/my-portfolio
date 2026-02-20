@@ -84,8 +84,9 @@ export default function Projects() {
                                 rel="noopener noreferrer"
                                 onMouseEnter={() => setActiveIndex(index)}
                                 initial={{ opacity: 0, x: -16 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ duration: 0.5, delay: 0.1 + index * 0.08, ease: expoOut }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true, margin: '-80px' }}
+                                transition={{ duration: 0.5, delay: index * 0.08, ease: expoOut }}
                                 className="group relative text-left py-5 flex items-start gap-5 border-b border-white/5 last:border-0"
                             >
                                 {/* Active left-edge indicator */}
@@ -148,7 +149,13 @@ export default function Projects() {
                     </div>
 
                     {/* Right: Animated preview panel — desktop only */}
-                    <div className="hidden md:flex flex-1 items-center">
+                    <motion.div
+                        className="hidden md:flex flex-1 items-center"
+                        initial={{ opacity: 0, x: 24 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, margin: '-80px' }}
+                        transition={{ duration: 0.5, delay: 0.2, ease: expoOut }}
+                    >
                         <AnimatePresence mode="wait">
                             <motion.div
                                 key={activeIndex}
@@ -209,7 +216,7 @@ export default function Projects() {
                                 </a>
                             </motion.div>
                         </AnimatePresence>
-                    </div>
+                    </motion.div>
 
                 </div>
             </div>

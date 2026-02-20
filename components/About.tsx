@@ -20,18 +20,20 @@ const capabilities = [
 
 const education = [
     {
+        institution: "Hindustan University",
+        location: "Chennai, India",
+        year: "2022 – 2026",
+        flagUrl: "https://flagcdn.com/w20/in.png",
+        flagAlt: "India",
+        badge: null,
+    },
+    {
         institution: "Shibaura Institute of Technology",
         location: "Tokyo, Japan",
         year: "2025",
         flagUrl: "https://flagcdn.com/w20/jp.png",
         flagAlt: "Japan",
-    },
-    {
-        institution: "Hindustan University",
-        location: "India",
-        year: "2022 – 2026",
-        flagUrl: "https://flagcdn.com/w20/in.png",
-        flagAlt: "India",
+        badge: "Semester Exchange",
     },
 ];
 
@@ -61,7 +63,7 @@ export default function About() {
                             <h2 className="font-display text-2xl md:text-3xl font-bold text-white leading-tight mb-3">
                                 Engineer who builds things<br className="hidden md:block" /> that actually ship.
                             </h2>
-                            <p className="text-white/55 leading-relaxed max-w-lg text-sm">
+                            <p className="text-white/70 leading-relaxed max-w-lg text-sm">
                                 Software engineer based in India, shipping real tools for real clients.
                                 Three freelance products in production — offline desktop apps, automation
                                 dashboards, full-stack platforms. Open to full-time roles and the right
@@ -82,7 +84,7 @@ export default function About() {
                                         className="flex flex-col"
                                     >
                                         <span className="font-display text-xl font-bold text-neon leading-none">{stat.value}</span>
-                                        <span className="text-[11px] text-white/35 mt-1 font-medium">{stat.label}</span>
+                                        <span className="text-[11px] text-white/50 mt-1 font-medium">{stat.label}</span>
                                     </motion.div>
                                 ))}
                             </div>
@@ -90,7 +92,7 @@ export default function About() {
 
                         {/* Capabilities */}
                         <ScrollReveal delay={0.15}>
-                            <p className="font-display text-[11px] uppercase tracking-widest text-white/30 mb-2">What I do</p>
+                            <p className="font-display text-[11px] uppercase tracking-widest text-white/45 mb-2">What I do</p>
                             <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                                 {capabilities.map((cap, i) => (
                                     <motion.div
@@ -104,7 +106,7 @@ export default function About() {
                                         <p className="font-display text-sm font-bold text-white group-hover:text-neon transition-colors duration-300 mb-1">
                                             {cap.title}
                                         </p>
-                                        <p className="text-xs text-white/40 leading-relaxed">
+                                        <p className="text-xs text-white/55 leading-relaxed">
                                             {cap.description}
                                         </p>
                                     </motion.div>
@@ -114,7 +116,7 @@ export default function About() {
 
                         {/* Education */}
                         <ScrollReveal delay={0.2}>
-                            <p className="font-display text-[11px] uppercase tracking-widest text-white/30 mb-2">Education</p>
+                            <p className="font-display text-[11px] uppercase tracking-widest text-white/45 mb-2">Education</p>
                             <div className="flex flex-col gap-2">
                                 {education.map((edu) => (
                                     <div
@@ -122,10 +124,18 @@ export default function About() {
                                         className="flex items-center gap-3 p-3 bg-surface-raised border border-white/5 rounded-xl"
                                     >
                                         <div className="flex-1 min-w-0">
-                                            <p className="text-sm font-semibold text-white/80 font-display flex items-center gap-1.5">{edu.institution} <img src={edu.flagUrl} alt={edu.flagAlt} className="inline w-4 h-auto" /></p>
-                                            <p className="text-[11px] text-white/35">{edu.location}</p>
+                                            <p className="text-sm font-semibold text-white/80 font-display flex items-center gap-1.5 flex-wrap">
+                                                {edu.institution}
+                                                <img src={edu.flagUrl} alt={edu.flagAlt} className="inline w-4 h-auto" />
+                                                {edu.badge && (
+                                                    <span className="text-[10px] font-medium text-neon/70 border border-neon/25 bg-neon/5 rounded-full px-2 py-0.5 font-display tracking-wide">
+                                                        {edu.badge}
+                                                    </span>
+                                                )}
+                                            </p>
+                                            <p className="text-[11px] text-white/50">{edu.location}</p>
                                         </div>
-                                        <span className="text-[11px] text-white/25 font-display tabular-nums shrink-0">{edu.year}</span>
+                                        <span className="text-[11px] text-white/45 font-display tabular-nums shrink-0">{edu.year}</span>
                                     </div>
                                 ))}
                             </div>
