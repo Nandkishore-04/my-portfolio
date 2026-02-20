@@ -77,6 +77,14 @@ export default function Hero() {
                 </motion.div>
             </div>
 
+            {/* Edge vignettes for smooth scroll transition */}
+            <div className="absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-surface to-transparent pointer-events-none z-10" />
+            <div className="absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-surface to-transparent pointer-events-none z-10" />
+            <div className="absolute top-0 left-0 right-0 h-12 bg-gradient-to-b from-surface to-transparent pointer-events-none z-10" />
+            <div className="absolute bottom-0 left-0 right-0 h-56 bg-gradient-to-t from-surface to-transparent pointer-events-none z-10" />
+            {/* Solid strip so zero snowflakes bleed into the next section */}
+            <div className="absolute bottom-0 left-0 right-0 h-6 bg-surface pointer-events-none z-10" />
+
             {/* Scroll Indicator */}
             <motion.div
                 initial={{ opacity: 0 }}

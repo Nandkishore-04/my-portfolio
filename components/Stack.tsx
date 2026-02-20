@@ -30,7 +30,7 @@ const expoOut: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 export default function Stack() {
     return (
-        <section id="stack" className="relative min-h-screen md:h-screen flex items-center overflow-hidden bg-surface px-6 py-20 md:py-0 scroll-mt-16">
+        <section id="stack" className="relative min-h-screen overflow-hidden bg-surface px-6 pt-8 pb-16 scroll-mt-16">
             <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(255,214,10,0.03)_0%,transparent_70%)] pointer-events-none" />
 
             <div className="relative z-10 max-w-4xl mx-auto w-full">

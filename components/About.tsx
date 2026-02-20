@@ -47,7 +47,7 @@ const expoOut: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 export default function About() {
     return (
-        <section id="about" className="relative min-h-screen md:h-screen flex items-center overflow-hidden bg-surface px-6 py-20 md:py-0 scroll-mt-16">
+        <section id="about" className="relative min-h-screen overflow-hidden bg-surface px-6 pt-8 pb-16 scroll-mt-16">
             {/* Subtle radial glow */}
             <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(255,214,10,0.04)_0%,transparent_70%)] pointer-events-none" />
 
@@ -55,12 +55,12 @@ export default function About() {
                 <div className="grid md:grid-cols-[1fr_300px] gap-8 lg:gap-12 items-center">
 
                     {/* Left: Bio + Capabilities + Stack */}
-                    <div className="order-2 md:order-1 space-y-5">
+                    <div className="order-2 md:order-1 space-y-7">
 
                         {/* Header */}
                         <ScrollReveal>
                             <p className="font-display text-xs uppercase tracking-widest text-neon mb-2">About</p>
-                            <h2 className="font-display text-2xl md:text-3xl font-bold text-white leading-tight mb-3">
+                            <h2 className="font-display text-3xl md:text-4xl font-bold text-white leading-tight mb-4">
                                 Engineer who builds things<br className="hidden md:block" /> that actually ship.
                             </h2>
                             <p className="text-white/70 leading-relaxed max-w-lg text-sm">
@@ -83,8 +83,8 @@ export default function About() {
                                         transition={{ duration: 0.4, delay: 0.15 + i * 0.07, ease: expoOut }}
                                         className="flex flex-col"
                                     >
-                                        <span className="font-display text-xl font-bold text-neon leading-none">{stat.value}</span>
-                                        <span className="text-[11px] text-white/50 mt-1 font-medium">{stat.label}</span>
+                                        <span className="font-display text-2xl font-bold text-neon leading-none">{stat.value}</span>
+                                        <span className="text-xs text-white/55 mt-1 font-medium">{stat.label}</span>
                                     </motion.div>
                                 ))}
                             </div>
@@ -92,8 +92,8 @@ export default function About() {
 
                         {/* Capabilities */}
                         <ScrollReveal delay={0.15}>
-                            <p className="font-display text-[11px] uppercase tracking-widest text-white/45 mb-2">What I do</p>
-                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 md:gap-2">
+                            <p className="font-display text-xs uppercase tracking-widest text-white/45 mb-3">What I do</p>
+                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                                 {capabilities.map((cap, i) => (
                                     <motion.div
                                         key={cap.title}
@@ -101,9 +101,9 @@ export default function About() {
                                         whileInView={{ opacity: 1, y: 0 }}
                                         viewport={{ once: true }}
                                         transition={{ duration: 0.4, delay: 0.2 + i * 0.07, ease: expoOut }}
-                                        className="p-3 bg-surface-raised border border-white/5 rounded-xl hover:border-neon/20 transition-colors duration-300 group"
+                                        className="p-4 bg-surface-raised border border-white/5 rounded-xl hover:border-neon/20 transition-colors duration-300 group"
                                     >
-                                        <p className="font-display text-sm font-bold text-white group-hover:text-neon transition-colors duration-300 mb-1">
+                                        <p className="font-display text-sm font-bold text-white group-hover:text-neon transition-colors duration-300 mb-1.5">
                                             {cap.title}
                                         </p>
                                         <p className="text-xs text-white/55 leading-relaxed">
@@ -116,12 +116,12 @@ export default function About() {
 
                         {/* Education */}
                         <ScrollReveal delay={0.2}>
-                            <p className="font-display text-[11px] uppercase tracking-widest text-white/45 mb-2">Education</p>
-                            <div className="flex flex-col gap-2">
+                            <p className="font-display text-xs uppercase tracking-widest text-white/45 mb-3">Education</p>
+                            <div className="flex flex-col gap-2.5">
                                 {education.map((edu) => (
                                     <div
                                         key={edu.institution}
-                                        className="flex items-center gap-3 p-3 bg-surface-raised border border-white/5 rounded-xl"
+                                        className="flex items-center gap-3 p-4 bg-surface-raised border border-white/5 rounded-xl"
                                     >
                                         <div className="flex-1 min-w-0">
                                             <p className="text-sm font-semibold text-white/80 font-display flex items-center gap-1.5 flex-wrap">
@@ -133,9 +133,9 @@ export default function About() {
                                                     </span>
                                                 )}
                                             </p>
-                                            <p className="text-[11px] text-white/50">{edu.location}</p>
+                                            <p className="text-xs text-white/50">{edu.location}</p>
                                         </div>
-                                        <span className="text-[11px] text-white/45 font-display tabular-nums shrink-0">{edu.year}</span>
+                                        <span className="text-xs text-white/45 font-display tabular-nums shrink-0">{edu.year}</span>
                                     </div>
                                 ))}
                             </div>

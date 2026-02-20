@@ -45,15 +45,15 @@ export default function Projects() {
     const [activeIndex, setActiveIndex] = useState(0);
 
     return (
-        <section id="projects" className="relative min-h-screen md:h-screen flex flex-col justify-center overflow-hidden bg-surface px-0 py-20 md:py-0 scroll-mt-16">
+        <section id="projects" className="relative min-h-screen overflow-hidden bg-surface px-0 pt-8 pb-16 scroll-mt-16">
             <div className="max-w-7xl mx-auto px-6 w-full">
 
                 {/* Header */}
                 <ScrollReveal>
-                    <div className="flex items-end justify-between mb-10 md:mb-14">
+                    <div className="flex items-end justify-between mb-12 md:mb-16">
                         <div>
                             <p className="font-display text-xs uppercase tracking-widest text-neon mb-2">Selected Work</p>
-                            <h2 className="font-display text-2xl md:text-4xl font-bold text-white tracking-tight">
+                            <h2 className="font-display text-3xl md:text-4xl font-bold text-white tracking-tight">
                                 Featured Projects
                             </h2>
                         </div>
@@ -61,12 +61,12 @@ export default function Projects() {
                             href="https://github.com/Nandkishore-04"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="hidden md:inline-flex items-center gap-2 text-sm text-white/30 hover:text-neon transition-colors duration-300 font-display font-medium"
+                            className="hidden md:inline-flex items-center gap-2 px-4 py-2 border border-neon/30 bg-neon/5 rounded-full text-sm text-neon font-display font-semibold hover:bg-neon/10 hover:border-neon/60 hover:shadow-[0_0_18px_rgba(255,214,10,0.15)] transition-all duration-300"
                         >
                             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                             </svg>
-                            GitHub Profile →
+                            GitHub Profile ↗
                         </a>
                     </div>
                 </ScrollReveal>
@@ -87,7 +87,7 @@ export default function Projects() {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true, margin: '-80px' }}
                                 transition={{ duration: 0.5, delay: index * 0.08, ease: expoOut }}
-                                className="group relative text-left py-5 flex items-start gap-5 border-b border-white/5 last:border-0"
+                                className="group relative text-left py-7 flex items-start gap-5 border-b border-white/5 last:border-0"
                             >
                                 {/* Active left-edge indicator */}
                                 <motion.div
@@ -106,7 +106,7 @@ export default function Projects() {
                                 {/* Title + tags */}
                                 <div className="flex-1 min-w-0">
                                     <div className="flex items-center gap-2 mb-1">
-                                        <h3 className={`font-display font-bold text-base md:text-lg leading-snug transition-colors duration-300 ${
+                                        <h3 className={`font-display font-bold text-lg md:text-xl leading-snug transition-colors duration-300 ${
                                             activeIndex === index ? 'text-white' : 'text-white/40 group-hover:text-white/70'
                                         }`}>
                                             {project.title}
@@ -119,8 +119,8 @@ export default function Projects() {
                                             {project.typeLabel}
                                         </span>
                                     </div>
-                                    <p className={`text-[11px] transition-colors duration-300 ${
-                                        activeIndex === index ? 'text-neon/60' : 'text-white/20'
+                                    <p className={`text-xs mt-1 transition-colors duration-300 ${
+                                        activeIndex === index ? 'text-neon/60' : 'text-white/25'
                                     }`}>
                                         {project.tags.slice(0, 3).join(' · ')}
                                     </p>
@@ -142,9 +142,12 @@ export default function Projects() {
                             href="https://github.com/Nandkishore-04"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="md:hidden mt-6 inline-flex items-center gap-2 text-sm text-white/30 hover:text-neon transition-colors duration-300 font-display font-medium"
+                            className="md:hidden mt-6 inline-flex items-center gap-2 px-4 py-2 border border-neon/30 bg-neon/5 rounded-full text-sm text-neon font-display font-semibold hover:bg-neon/10 hover:border-neon/60 transition-all duration-300"
                         >
-                            View GitHub Profile →
+                            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                            </svg>
+                            GitHub Profile ↗
                         </a>
                     </div>
 
@@ -163,7 +166,7 @@ export default function Projects() {
                                 animate={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, y: -18 }}
                                 transition={{ duration: 0.35, ease: expoOut }}
-                                className="w-full p-8 rounded-2xl border border-white/[0.07] bg-surface-raised relative overflow-hidden"
+                                className="w-full p-10 rounded-2xl border border-white/[0.07] bg-surface-raised relative overflow-hidden"
                             >
                                 {/* Top accent line */}
                                 <div className="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-neon/25 to-transparent" />
@@ -186,11 +189,11 @@ export default function Projects() {
                                     </span>
                                 </div>
 
-                                <h3 className="font-display text-2xl md:text-[1.75rem] font-bold text-white mb-4 leading-tight">
+                                <h3 className="font-display text-2xl md:text-3xl font-bold text-white mb-4 leading-tight">
                                     {projects[activeIndex].title}
                                 </h3>
 
-                                <p className="text-white/50 text-sm leading-relaxed mb-7 max-w-md">
+                                <p className="text-white/60 text-sm leading-relaxed mb-8 max-w-md">
                                     {projects[activeIndex].description}
                                 </p>
 
@@ -198,7 +201,7 @@ export default function Projects() {
                                     {projects[activeIndex].tags.map((tag) => (
                                         <span
                                             key={tag}
-                                            className="px-3 py-1 bg-white/[0.04] border border-white/[0.08] rounded-full text-[11px] font-medium text-white/50"
+                                            className="px-3 py-1 bg-white/[0.04] border border-white/[0.08] rounded-full text-xs font-medium text-white/55"
                                         >
                                             {tag}
                                         </span>
@@ -209,7 +212,7 @@ export default function Projects() {
                                     href={projects[activeIndex].link}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="group/link inline-flex items-center gap-2 text-sm font-display font-semibold text-neon"
+                                    className="group/link inline-flex items-center gap-2 px-5 py-2.5 bg-neon/10 border border-neon/40 rounded-full text-sm font-display font-semibold text-neon hover:bg-neon/20 hover:border-neon/70 hover:shadow-[0_0_20px_rgba(255,214,10,0.2)] transition-all duration-300"
                                 >
                                     View on GitHub
                                     <span className="group-hover/link:translate-x-1 transition-transform duration-300">→</span>
