@@ -40,7 +40,7 @@ export default function FeaturedCaseStudy() {
                 </motion.div>
 
                 {/* Title */}
-                <motion.h2 
+                <motion.h2
                   variants={staggerItem}
                   className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight"
                 >
@@ -50,17 +50,17 @@ export default function FeaturedCaseStudy() {
                 </motion.h2>
 
                 {/* Description */}
-                <motion.p 
+                <motion.p
                   variants={staggerItem}
                   className="text-lg text-foreground/70 leading-relaxed"
                 >
-                  Designed and implemented C API for Text-to-Speech pipeline with SpeechT5 
-                  integration. Contributed to Intel's AI inference toolkit, enabling 
+                  Designed and implemented C API for Text-to-Speech pipeline with SpeechT5
+                  integration. Contributed to Intel&apos;s AI inference toolkit, enabling
                   high-performance speech synthesis across platforms.
                 </motion.p>
 
                 {/* Highlights */}
-                <motion.div 
+                <motion.div
                   variants={staggerItem}
                   className="grid grid-cols-2 gap-6 pt-4"
                 >
@@ -75,7 +75,7 @@ export default function FeaturedCaseStudy() {
                 </motion.div>
 
                 {/* Tech Stack */}
-                <motion.div 
+                <motion.div
                   variants={staggerItem}
                   className="flex flex-wrap gap-2 pt-4"
                 >
@@ -96,10 +96,10 @@ export default function FeaturedCaseStudy() {
                     className="inline-flex items-center gap-2 text-accent hover:text-accent-muted font-medium group/link transition-colors duration-300"
                   >
                     View Full Case Study
-                    <svg 
-                      className="w-4 h-4 group-hover/link:translate-x-1 transition-transform duration-300" 
-                      fill="none" 
-                      viewBox="0 0 24 24" 
+                    <svg
+                      className="w-4 h-4 group-hover/link:translate-x-1 transition-transform duration-300"
+                      fill="none"
+                      viewBox="0 0 24 24"
                       stroke="currentColor"
                     >
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -127,7 +127,7 @@ export default function FeaturedCaseStudy() {
                     <div className="text-foreground/60 pl-4">device: CPU</div>
                     <div className="text-foreground/60 pl-4">precision: FP16</div>
                   </motion.div>
-                  
+
                   <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 0.4, x: 0 }}
@@ -137,7 +137,7 @@ export default function FeaturedCaseStudy() {
                   >
                     <div className="text-accent"># Generate Speech</div>
                     <div className="text-foreground/60">ov_genai_tts_generate(...)</div>
-                    <div className="text-foreground/60 pl-4">text: "Hello World"</div>
+                    <div className="text-foreground/60 pl-4">text: &quot;Hello World&quot;</div>
                     <div className="text-foreground/60 pl-4">→ audio.wav</div>
                   </motion.div>
 

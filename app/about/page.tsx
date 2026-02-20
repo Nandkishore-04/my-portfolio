@@ -29,7 +29,7 @@ export default function AboutPage() {
                   {/* Gradient Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
                 </div>
-                
+
                 {/* Decorative Glow */}
                 <div className="absolute -inset-4 bg-accent/10 rounded-2xl blur-2xl -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
               </div>
@@ -66,7 +66,7 @@ export default function AboutPage() {
                   <span className="text-accent">shipping products</span>
                 </h1>
                 <p className="text-xl text-foreground/70 leading-relaxed">
-                  I'm a founder and backend engineer who turns ideas into production systems.
+                  I&apos;m a founder and backend engineer who turns ideas into production systems.
                   From admin dashboards to AI-powered automation, I build tools that work.
                 </p>
               </motion.div>
@@ -82,7 +82,7 @@ export default function AboutPage() {
                 </div>
                 <div className="space-y-4 text-foreground/70 leading-relaxed">
                   <p>
-                    Co-founder at <span className="text-accent font-semibold">Hexor</span>, where we're building
+                    Co-founder at <span className="text-accent font-semibold">Hexor</span>, where we&apos;re building
                     automation systems and AI products for businesses that need reliability at scale.
                   </p>
                   <p>
@@ -155,7 +155,7 @@ export default function AboutPage() {
                 <div className="space-y-4 text-foreground/70 leading-relaxed">
                   <p>
                     Hexor is my startup focused on building practical automation and AI systems
-                    for businesses. We're not chasing hype—we're solving real operational problems.
+                    for businesses. We&apos;re not chasing hype—we&apos;re solving real operational problems.
                   </p>
                   <p>
                     Our approach is simple: identify manual, time-consuming processes, build tools
@@ -181,11 +181,11 @@ export default function AboutPage() {
           className="max-w-4xl mx-auto text-center p-12 bg-gradient-to-br from-border/20 to-transparent border border-border rounded-2xl"
         >
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-            Let's work together
+            Let&apos;s work together
           </h2>
           <p className="text-lg text-foreground/70 mb-8 max-w-2xl mx-auto">
             Looking for a technical co-founder, backend engineer, or someone to build
-            your product from scratch? Let's talk.
+            your product from scratch? Let&apos;s talk.
           </p>
           <a
             href="/contact"

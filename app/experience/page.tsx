@@ -137,9 +137,8 @@ export default function ExperiencePage() {
                   <motion.div
                     key={index}
                     variants={staggerItem}
-                    className={`relative md:grid md:grid-cols-2 gap-8 items-start ${
-                      isEven ? "" : "md:flex-row-reverse"
-                    }`}
+                    className={`relative md:grid md:grid-cols-2 gap-8 items-start ${isEven ? "" : "md:flex-row-reverse"
+                      }`}
                   >
                     {/* Timeline Dot */}
                     <div className="absolute left-0 md:left-1/2 top-8 w-4 h-4 bg-accent rounded-full border-4 border-background shadow-lg shadow-accent/20 hidden sm:block md:translate-x-[-8px] z-10" />
@@ -259,7 +258,7 @@ export default function ExperiencePage() {
             Want to work together?
           </h2>
           <p className="text-lg text-foreground/70 mb-8">
-            I'm always open to interesting projects, collaborations, and opportunities.
+            I&apos;m always open to interesting projects, collaborations, and opportunities.
           </p>
           <a
             href="/contact"

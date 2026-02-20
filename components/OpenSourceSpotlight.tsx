@@ -36,13 +36,13 @@ export default function OpenSourceSpotlight() {
       >
         {/* Header */}
         <div className="mb-16 max-w-3xl">
-          <motion.span 
+          <motion.span
             variants={fadeIn}
             className="text-sm font-medium tracking-wider uppercase text-foreground/50"
           >
             Open Source
           </motion.span>
-          <motion.h2 
+          <motion.h2
             variants={slideUp}
             className="text-4xl sm:text-5xl lg:text-6xl font-bold mt-4 leading-tight"
           >
@@ -50,11 +50,11 @@ export default function OpenSourceSpotlight() {
             <br />
             <span className="text-accent">AI ecosystem</span>
           </motion.h2>
-          <motion.p 
+          <motion.p
             variants={slideUp}
             className="text-lg text-foreground/70 mt-6 leading-relaxed"
           >
-            Active contributor to Intel's OpenVINO GenAI toolkit, building infrastructure 
+            Active contributor to Intel&apos;s OpenVINO GenAI toolkit, building infrastructure
             for next-generation AI inference.
           </motion.p>
         </div>
@@ -109,10 +109,10 @@ export default function OpenSourceSpotlight() {
                 {/* Arrow Link */}
                 <div className="flex items-center gap-2 text-sm font-medium text-foreground/70 group-hover:text-accent transition-colors duration-300">
                   <span>View Contribution</span>
-                  <svg 
-                    className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" 
-                    fill="none" 
-                    viewBox="0 0 24 24" 
+                  <svg
+                    className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"
+                    fill="none"
+                    viewBox="0 0 24 24"
                     stroke="currentColor"
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -127,7 +127,7 @@ export default function OpenSourceSpotlight() {
         </div>
 
         {/* Stats Bar */}
-        <motion.div 
+        <motion.div
           variants={fadeIn}
           className="mt-16 p-8 bg-gradient-to-r from-border/10 via-border/20 to-border/10 border border-border rounded-xl"
         >

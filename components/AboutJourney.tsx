@@ -43,13 +43,13 @@ export default function AboutJourney() {
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
           {/* Left: About */}
           <div>
-            <motion.span 
+            <motion.span
               variants={fadeIn}
               className="text-sm font-medium tracking-wider uppercase text-foreground/50"
             >
               About
             </motion.span>
-            <motion.h2 
+            <motion.h2
               variants={slideUp}
               className="text-4xl sm:text-5xl lg:text-6xl font-bold mt-4 leading-tight mb-8"
             >
@@ -58,31 +58,31 @@ export default function AboutJourney() {
               <span className="text-accent">purpose</span>
             </motion.h2>
 
-            <motion.div 
+            <motion.div
               variants={staggerContainer}
               className="space-y-6 text-lg text-foreground/70 leading-relaxed"
             >
               <motion.p variants={staggerItem}>
-                I'm a backend engineer who thrives at the intersection of AI, automation, 
-                and system design. My work ranges from contributing C APIs to Intel's OpenVINO 
+                I&apos;m a backend engineer who thrives at the intersection of AI, automation,
+                and system design. My work ranges from contributing C APIs to Intel&apos;s OpenVINO
                 toolkit to building full-stack platforms that serve real users.
               </motion.p>
 
               <motion.p variants={staggerItem}>
-                As a co-founder, I've learned that great engineering isn't just about 
-                writing code—it's about solving problems that matter, shipping systems 
+                As a co-founder, I&apos;ve learned that great engineering isn&apos;t just about
+                writing code—it&apos;s about solving problems that matter, shipping systems
                 that scale, and building tools that people actually use.
               </motion.p>
 
               <motion.p variants={staggerItem}>
-                Whether it's optimizing AI inference pipelines, automating workflows, 
-                or architecting admin dashboards, I approach every project with the same 
+                Whether it&apos;s optimizing AI inference pipelines, automating workflows,
+                or architecting admin dashboards, I approach every project with the same
                 mindset: <span className="text-accent font-semibold">build it right, make it work, ship it fast</span>.
               </motion.p>
             </motion.div>
 
             {/* Stats */}
-            <motion.div 
+            <motion.div
               variants={fadeIn}
               className="grid grid-cols-2 gap-6 mt-12 pt-8 border-t border-border"
             >
@@ -107,20 +107,20 @@ export default function AboutJourney() {
 
           {/* Right: Journey Timeline */}
           <div>
-            <motion.span 
+            <motion.span
               variants={fadeIn}
               className="text-sm font-medium tracking-wider uppercase text-foreground/50"
             >
               Journey
             </motion.span>
-            <motion.h3 
+            <motion.h3
               variants={slideUp}
               className="text-3xl sm:text-4xl font-bold mt-4 leading-tight mb-12"
             >
               Key milestones
             </motion.h3>
 
-            <motion.div 
+            <motion.div
               variants={staggerContainer}
               className="space-y-8 relative"
             >
@@ -170,11 +170,11 @@ export default function AboutJourney() {
                 href="#contact"
                 className="inline-flex items-center gap-2 text-accent hover:text-accent-muted font-medium group transition-colors duration-300"
               >
-                Let's build something together
-                <svg 
-                  className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" 
-                  fill="none" 
-                  viewBox="0 0 24 24" 
+                Let&apos;s build something together
+                <svg
+                  className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"
+                  fill="none"
+                  viewBox="0 0 24 24"
                   stroke="currentColor"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />

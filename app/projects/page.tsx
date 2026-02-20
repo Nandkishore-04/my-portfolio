@@ -83,8 +83,8 @@ export default function ProjectsPage() {
               Featured Work
             </span>
           </motion.div>
-          
-          <motion.h1 
+
+          <motion.h1
             variants={slideUp}
             className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight"
           >
@@ -92,8 +92,8 @@ export default function ProjectsPage() {
             <br />
             <span className="text-accent">ship and scale</span>
           </motion.h1>
-          
-          <motion.p 
+
+          <motion.p
             variants={slideUp}
             className="text-xl sm:text-2xl text-foreground/70 max-w-3xl leading-relaxed"
           >
@@ -121,17 +121,16 @@ export default function ProjectsPage() {
                 <div className="relative h-full p-8 sm:p-10 bg-gradient-to-br from-border/20 to-transparent border border-border rounded-2xl hover:border-accent/40 transition-all duration-500 overflow-hidden">
                   {/* Background Gradient Glow */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10`} />
-                  
+
                   {/* Status Badge */}
                   <div className="flex items-center justify-between mb-6">
                     <span className="text-xs font-medium tracking-wide uppercase text-foreground/50">
                       {project.category}
                     </span>
-                    <span className={`px-3 py-1 text-xs font-medium rounded-full ${
-                      project.status === 'Production' || project.status === 'Live'
+                    <span className={`px-3 py-1 text-xs font-medium rounded-full ${project.status === 'Production' || project.status === 'Live'
                         ? 'bg-emerald-500/10 border border-emerald-500/20 text-emerald-400'
                         : 'bg-accent/10 border border-accent/20 text-accent'
-                    }`}>
+                      }`}>
                       {project.status}
                     </span>
                   </div>
@@ -175,10 +174,10 @@ export default function ProjectsPage() {
                   {/* View Project Link */}
                   <div className="flex items-center gap-2 text-accent group-hover:gap-3 transition-all duration-300 font-medium">
                     <span>View Project</span>
-                    <svg 
-                      className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" 
-                      fill="none" 
-                      viewBox="0 0 24 24" 
+                    <svg
+                      className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300"
+                      fill="none"
+                      viewBox="0 0 24 24"
                       stroke="currentColor"
                     >
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -210,7 +209,7 @@ export default function ProjectsPage() {
           </h2>
           <p className="text-lg text-foreground/70 mb-8 max-w-2xl mx-auto">
             I build custom dashboards, automation systems, and AI products.
-            Let's discuss your next project.
+            Let&apos;s discuss your next project.
           </p>
           <a
             href="/contact"

@@ -173,6 +173,7 @@ export default function ParticleBackground({
         animate();
 
         // Cleanup
+        const currentContainer = containerRef.current;
         return () => {
             window.removeEventListener('mousemove', handleMouseMove);
             window.removeEventListener('resize', handleResize);
@@ -181,8 +182,8 @@ export default function ParticleBackground({
                 cancelAnimationFrame(animationIdRef.current);
             }
 
-            if (rendererRef.current && containerRef.current) {
-                containerRef.current.removeChild(rendererRef.current.domElement);
+            if (rendererRef.current && currentContainer) {
+                currentContainer.removeChild(rendererRef.current.domElement);
             }
 
             geometry.dispose();

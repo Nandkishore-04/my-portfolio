@@ -289,7 +289,7 @@ export default function TechStackPage() {
             Need these skills on your team?
           </h2>
           <p className="text-lg text-foreground/70 mb-8">
-            Let's discuss how I can help build your next project with the right tools.
+            Let&apos;s discuss how I can help build your next project with the right tools.
           </p>
           <a
             href="/contact"

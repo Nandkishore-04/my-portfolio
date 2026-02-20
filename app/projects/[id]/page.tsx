@@ -10,7 +10,7 @@ import { getProjectById, getOtherProjects } from "@/lib/projectsData";
 export default function ProjectPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
   const project = getProjectById(id);
-  
+
   if (!project) {
     notFound();
   }
@@ -45,17 +45,16 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
             <span className="px-4 py-2 text-sm font-medium tracking-wider uppercase bg-accent/10 border border-accent/20 rounded-full text-accent">
               {project.category}
             </span>
-            <span className={`px-3 py-1 text-xs font-medium rounded-full ${
-              project.status === 'Production' || project.status === 'Live'
+            <span className={`px-3 py-1 text-xs font-medium rounded-full ${project.status === 'Production' || project.status === 'Live'
                 ? 'bg-emerald-500/10 border border-emerald-500/20 text-emerald-400'
                 : 'bg-accent/10 border border-accent/20 text-accent'
-            }`}>
+              }`}>
               {project.status}
             </span>
           </motion.div>
 
           {/* Title */}
-          <motion.h1 
+          <motion.h1
             variants={slideUp}
             className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight"
           >
@@ -63,7 +62,7 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
           </motion.h1>
 
           {/* Description */}
-          <motion.p 
+          <motion.p
             variants={slideUp}
             className="text-xl sm:text-2xl text-foreground/70 leading-relaxed mb-12"
           >
@@ -71,7 +70,7 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
           </motion.p>
 
           {/* Metrics Grid */}
-          <motion.div 
+          <motion.div
             variants={fadeIn}
             className="grid grid-cols-2 lg:grid-cols-4 gap-6 p-8 bg-gradient-to-br from-border/20 to-transparent border border-border rounded-xl"
           >
@@ -119,7 +118,7 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
           <motion.h2 variants={slideUp} className="text-3xl sm:text-4xl font-bold mb-6">
             The Challenge
           </motion.h2>
-          <motion.div 
+          <motion.div
             variants={slideUp}
             className="p-8 bg-gradient-to-br from-border/20 to-transparent border border-border rounded-xl"
           >
@@ -295,7 +294,7 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
             Like what you see?
           </h2>
           <p className="text-lg text-foreground/70 mb-8">
-            Let's discuss how I can help build your next project.
+            Let&apos;s discuss how I can help build your next project.
           </p>
           <a
             href="/contact"

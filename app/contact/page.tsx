@@ -57,7 +57,7 @@ export default function ContactPage() {
             variants={slideUp}
             className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight"
           >
-            Let's build something
+            Let&apos;s build something
             <br />
             <span className="text-accent">great together</span>
           </motion.h1>
@@ -67,7 +67,7 @@ export default function ContactPage() {
             className="text-xl sm:text-2xl text-foreground/70 max-w-3xl mx-auto leading-relaxed mb-8"
           >
             Looking for a technical co-founder, backend engineer, or someone to build
-            your product from scratch? I'm here to help.
+            your product from scratch? I&apos;m here to help.
           </motion.p>
 
           {/* Availability Indicator */}
@@ -246,10 +246,10 @@ export default function ContactPage() {
               variants={staggerItem}
               className="p-6 bg-gradient-to-br from-border/10 to-transparent border border-border rounded-xl"
             >
-              <h3 className="text-lg font-bold mb-2">What's your tech stack?</h3>
+              <h3 className="text-lg font-bold mb-2">What&apos;s your tech stack?</h3>
               <p className="text-foreground/70 leading-relaxed">
-                I specialize in Python and Node.js for backend, React/Next.js for frontend, 
-                PostgreSQL/MongoDB for databases, and have deep experience with AI/ML integration 
+                I specialize in Python and Node.js for backend, React/Next.js for frontend,
+                PostgreSQL/MongoDB for databases, and have deep experience with AI/ML integration
                 using TensorFlow and OpenVINO.
               </p>
             </motion.div>
@@ -260,8 +260,8 @@ export default function ContactPage() {
             >
               <h3 className="text-lg font-bold mb-2">Do you take on freelance projects?</h3>
               <p className="text-foreground/70 leading-relaxed">
-                Yes! I'm available for custom admin dashboards, automation systems, AI integration, 
-                and full-stack development projects. I prefer projects where I can have significant 
+                Yes! I&apos;m available for custom admin dashboards, automation systems, AI integration,
+                and full-stack development projects. I prefer projects where I can have significant
                 technical impact.
               </p>
             </motion.div>
@@ -272,8 +272,8 @@ export default function ContactPage() {
             >
               <h3 className="text-lg font-bold mb-2">Are you open to full-time opportunities?</h3>
               <p className="text-foreground/70 leading-relaxed">
-                I'm particularly interested in startup roles where I can be a technical co-founder 
-                or early backend engineer. Open to discussing exciting opportunities that align with 
+                I&apos;m particularly interested in startup roles where I can be a technical co-founder
+                or early backend engineer. Open to discussing exciting opportunities that align with
                 my expertise in AI, automation, and system design.
               </p>
             </motion.div>
@@ -292,12 +292,12 @@ export default function ContactPage() {
         >
           {/* Background Glow */}
           <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent blur-2xl -z-10" />
-          
+
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
             Ready to start?
           </h2>
           <p className="text-lg text-foreground/70 mb-8 max-w-2xl mx-auto">
-            Drop me an email and let's discuss how I can help bring your project to life.
+            Drop me an email and let&apos;s discuss how I can help bring your project to life.
           </p>
           <a
             href="mailto:nand@hexor.co"
