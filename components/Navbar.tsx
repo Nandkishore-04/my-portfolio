@@ -1,7 +1,7 @@
 'use client';
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const sections = ['home', 'projects', 'about', 'contact'] as const;
@@ -9,7 +9,9 @@ const sections = ['home', 'projects', 'about', 'contact'] as const;
 export default function Navbar() {
     const [activeSection, setActiveSection] = useState<string>('home');
     const [scrolled, setScrolled] = useState(false);
+    const [visible, setVisible] = useState(true);
     const [mobileOpen, setMobileOpen] = useState(false);
+    const lastScrollY = useRef(0);
 
     useEffect(() => {
         const observers: IntersectionObserver[] = [];
@@ -32,7 +34,16 @@ export default function Navbar() {
         });
 
         const handleScroll = () => {
-            setScrolled(window.scrollY > 100);
+            const current = window.scrollY;
+            setScrolled(current > 60);
+            if (current < 60) {
+                setVisible(true);
+            } else if (current > lastScrollY.current + 8) {
+                setVisible(false); // scrolling down — hide
+            } else if (current < lastScrollY.current - 8) {
+                setVisible(true);  // scrolling up — show
+            }
+            lastScrollY.current = current;
         };
         window.addEventListener('scroll', handleScroll, { passive: true });
 
@@ -45,9 +56,9 @@ export default function Navbar() {
     return (
         <>
             <nav
-                className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+                className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
                     scrolled ? 'bg-white/[0.03] backdrop-blur-2xl border-b border-white/[0.06]' : 'bg-transparent'
-                }`}
+                } ${visible ? 'translate-y-0' : '-translate-y-full'}`}
             >
                 <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
                     {/* Logo */}
