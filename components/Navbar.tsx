@@ -63,8 +63,8 @@ export default function Navbar() {
                 <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
                     {/* Logo */}
                     <Link href="#home" className="flex items-center gap-3 flex-1">
-                        <div className="h-9 px-3.5 border-2 border-neon rounded-full flex items-center justify-center bg-neon/10">
-                            <span className="text-sm font-bold text-neon font-display">NK</span>
+                        <div className="w-9 h-9 bg-neon rounded-xl flex items-center justify-center flex-none">
+                            <span className="text-sm font-bold text-black font-display tracking-tight">NK</span>
                         </div>
                         <span className="text-sm font-semibold text-white/70 hidden md:block font-display">
                             Nand Kishore
