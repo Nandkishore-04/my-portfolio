@@ -55,16 +55,7 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.7, ease: expoOut }}
-                    className="font-display text-lg text-white/40 mt-8 md:mt-12"
-                >
-                    Full-Stack & Automation Engineer
-                </motion.p>
-
-                <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.8, ease: expoOut }}
-                    className="font-display text-xs md:text-sm text-white/25 mt-3 tracking-wide"
+                    className="font-display text-xs md:text-sm text-white/40 mt-8 md:mt-12 tracking-wide"
                 >
                     AI &amp; Machine Learning Enthusiast | AI Full-Stack Dev | Automation | Open Source Contributor
                 </motion.p>
