@@ -69,6 +69,17 @@ export default function About() {
                                 dashboards, full-stack platforms. Open to full-time roles and the right
                                 client projects.
                             </p>
+                            {/* GSoC 2026 selection — single-line pill */}
+                            <div className="mt-4">
+                                <a
+                                    href="https://github.com/openvinotoolkit"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center justify-center px-4 py-2 bg-neon text-black font-bold rounded-full font-display text-sm hover:shadow-[0_0_28px_rgba(255,214,10,0.3)] transition-all duration-200"
+                                >
+                                    Google Summer of Code 2026 — OpenVINO (Intel)
+                                </a>
+                            </div>
                         </ScrollReveal>
 
                         {/* Stats row */}

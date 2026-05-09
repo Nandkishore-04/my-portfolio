@@ -16,7 +16,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-    title: "Portfolio | Full-Stack Engineer",
+    title: "Portfolio | Full-Stack Engineer — GSoC 2026 (OpenVINO, Intel)",
     description: "Building scalable products and automating business workflows",
 };
 
