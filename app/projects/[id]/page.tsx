@@ -3,12 +3,11 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { motion } from "framer-motion";
-import { use } from "react";
 import { fadeIn, slideUp, staggerContainer, staggerItem, scrollReveal } from "@/lib/animations";
 import { getProjectById, getOtherProjects } from "@/lib/projectsData";
 
-export default function ProjectPage({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = use(params);
+export default function ProjectPage({ params }: { params: { id: string } }) {
+  const { id } = params;
   const project = getProjectById(id);
 
   if (!project) {
