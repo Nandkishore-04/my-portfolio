@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Inter, Space_Grotesk, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -15,9 +15,17 @@ const spaceGrotesk = Space_Grotesk({
     weight: ["400", "500", "600", "700"],
 });
 
+const instrumentSerif = Instrument_Serif({
+    subsets: ["latin"],
+    display: "swap",
+    variable: "--font-instrument",
+    weight: "400",
+    style: ["normal", "italic"],
+});
+
 export const metadata: Metadata = {
-    title: "Portfolio | Full-Stack Engineer — GSoC 2026 (OpenVINO, Intel)",
-    description: "Building scalable products and automating business workflows",
+    title: "Nand Kishore · AI Engineer",
+    description: "AI engineer. GSoC 2026 with Intel OpenVINO, plus products running for real clients.",
 };
 
 export default function RootLayout({
@@ -26,7 +34,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
+        <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable} ${instrumentSerif.variable}`}>
             <body className={inter.className}>{children}</body>
         </html>
     );

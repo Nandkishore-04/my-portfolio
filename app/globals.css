@@ -6,6 +6,56 @@
   --neon: #FFD60A;
   --neon-rgb: 255, 214, 10;
   --surface: #0A0A0A;
+
+  /* Cinematic homepage theme (Velorah template) */
+  --background: 201 100% 13%;
+  --foreground: 0 0% 100%;
+  --muted: 0 0% 10%;
+  --muted-foreground: 240 4% 66%;
+  --border: 0 0% 18%;
+}
+
+/* Liquid Glass Effect */
+.liquid-glass {
+  background: rgba(255, 255, 255, 0.01);
+  background-blend-mode: luminosity;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: none;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+.liquid-glass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.4px;
+  background: linear-gradient(180deg,
+    rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.15) 20%,
+    rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0) 60%,
+    rgba(255, 255, 255, 0.15) 80%, rgba(255, 255, 255, 0.45) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+@keyframes fade-rise {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-rise { animation: fade-rise 0.8s ease-out both; }
+.animate-fade-rise-delay { animation: fade-rise 0.8s ease-out 0.2s both; }
+.animate-fade-rise-delay-2 { animation: fade-rise 0.8s ease-out 0.4s both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-rise,
+  .animate-fade-rise-delay,
+  .animate-fade-rise-delay-2 {
+    animation: none;
+  }
 }
 
 html {
@@ -82,4 +132,24 @@ section {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* Homepage (light editorial theme) */
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center border border-[#1f3a8a] bg-[#1f3a8a] px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-[#172c6b];
+  }
+  .btn-outline {
+    @apply inline-flex items-center border border-ink/25 bg-white px-4 py-2 text-sm font-semibold text-ink transition-colors hover:border-ink;
+  }
+  .btn-light {
+    @apply inline-flex items-center border border-white bg-white px-4 py-2 text-sm font-semibold text-ink transition-colors hover:bg-white/90;
+  }
+  .btn-ghost-light {
+    @apply inline-flex items-center border border-white/40 px-4 py-2 text-sm font-semibold text-white transition-colors hover:border-white;
+  }
+}
+.bg-paper ::selection {
+  background-color: #c7d2fe;
+  color: #121826;
 }
