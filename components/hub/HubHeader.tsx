@@ -25,7 +25,7 @@ export default function HubHeader() {
 
                 <div className="flex items-center gap-3 pointer-events-auto">
                     <a
-                        href="/Nand-Kishore-AI Engineer.pdf"
+                        href="/Nand_Kishore_Resume.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="px-4 py-2 text-xs font-display font-semibold text-white/70 border border-white/10 rounded-full hover:border-neon/40 hover:text-neon transition-colors duration-300"

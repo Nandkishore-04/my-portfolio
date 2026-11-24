@@ -34,7 +34,7 @@ export default function GlassNav() {
             </div>
 
             <a
-                href="/Nand-Kishore-AI Engineer.pdf"
+                href="/Nand_Kishore_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="liquid-glass rounded-full px-6 py-2.5 text-sm text-foreground hover:scale-[1.03] transition-transform"

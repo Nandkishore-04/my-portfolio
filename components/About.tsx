@@ -155,7 +155,7 @@ export default function About() {
                         {/* Resume CTA */}
                         <ScrollReveal delay={0.25}>
                             <a
-                                href="/Nand-Kishore-AI Engineer.pdf"
+                                href="/Nand_Kishore_Resume.pdf"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center gap-2.5 px-6 py-2.5 bg-neon text-black font-bold rounded-full font-display text-sm hover:shadow-[0_0_28px_rgba(255,214,10,0.3)] hover:scale-105 transition-all duration-300"
