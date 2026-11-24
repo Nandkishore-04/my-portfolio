@@ -6,7 +6,7 @@ export const profile = {
     github: "https://github.com/Nandkishore-04",
     githubLabel: "github.com/Nandkishore-04",
     linkedin: "https://www.linkedin.com/in/nand-kishore-8b9093262/",
-    resume: "/Nand%20Kishore%20Resume.pdf",
+    resume: "/Nand-Kishore-AI%20Engineer.pdf",
     location: "Chennai, India",
     availability: "Open to AI/ML roles · Chennai or remote",
 };
