@@ -8,7 +8,7 @@ export const profile = {
     linkedin: "https://www.linkedin.com/in/nand-kishore-8b9093262/",
     resume: "/Nand-Kishore-AI%20Engineer.pdf",
     location: "Chennai, India",
-    availability: "Open to AI/ML roles · Chennai or remote",
+    availability: "Open to AI/ML roles · Chennai, Dubai (UAE) or remote",
 };
 
 export type Tone = "rose" | "indigo" | "emerald" | "amber" | "slate";
