@@ -68,7 +68,7 @@ export const projects: Project[] = [
         ],
         tags: ["OpenVINO", "n8n", "TypeScript", "Python", "Qdrant", "PostgreSQL"],
         demo: "https://drive.google.com/drive/folders/1WgsaEkTnMBHCK2JUDPwpSIlLVmPYLnd-",
-        code: "https://github.com/Nandkishore-04",
+        code: "https://github.com/Nandkishore-04/n8n-nodes-openvino",
         diagram: {
             title: "Intel Core Ultra AI PC",
             note: "every model on-device",
