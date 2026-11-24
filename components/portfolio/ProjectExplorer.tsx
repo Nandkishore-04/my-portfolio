@@ -23,7 +23,7 @@ function Diagram({ project }: { project: Project }) {
                 {diagram.lanes.map((lane) => {
                     const t = toneStyles[lane.tone];
                     return (
-                        <div key={lane.label} className={`flex min-h-[150px] flex-col gap-2 border p-3 ${t.lane}`}>
+                        <div key={lane.label} className={`flex flex-col gap-2 border p-3 sm:min-h-[150px] ${t.lane}`}>
                             <span className={`text-[11px] font-semibold uppercase tracking-wide ${t.label}`}>
                                 {lane.label}
                             </span>
@@ -85,19 +85,22 @@ export default function ProjectExplorer() {
             </div>
 
             {/* Panel */}
-            <div id="project-panel" role="tabpanel" className="mt-6 grid gap-8 lg:grid-cols-[1.15fr_1fr] lg:items-start">
-                <Diagram project={project} />
+            <div id="project-panel" role="tabpanel" className="mt-6 grid gap-6 sm:gap-8 lg:grid-cols-[1.15fr_1fr] lg:items-start">
+                {/* On phones the description comes first, the diagram second */}
+                <div className="order-2 lg:order-1">
+                    <Diagram project={project} />
+                </div>
 
-                <div>
+                <div className="order-1 lg:order-2">
                     <p className="text-xs text-ink/55">{project.eyebrow}</p>
                     <h3 className="mt-1 font-display text-2xl font-bold tracking-tight text-ink">{project.title}</h3>
                     <p className="mt-2 text-sm text-ink/70">{project.tagline}</p>
 
                     {project.stats && (
-                        <div className="mt-5 grid grid-cols-3 gap-2">
+                        <div className="mt-5 grid grid-cols-3 gap-1.5 sm:gap-2">
                             {project.stats.map((s) => (
-                                <div key={s.label} className="border border-ink/15 bg-white px-3 py-2.5">
-                                    <div className="font-display text-lg font-bold text-ink">{s.value}</div>
+                                <div key={s.label} className="border border-ink/15 bg-white px-2 py-2 sm:px-3 sm:py-2.5">
+                                    <div className="font-display text-base font-bold text-ink sm:text-lg">{s.value}</div>
                                     <div className="text-[11px] text-ink/55">{s.label}</div>
                                 </div>
                             ))}

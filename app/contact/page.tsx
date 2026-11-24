@@ -13,8 +13,8 @@ const contactMethods = [
   },
   {
     label: "LinkedIn",
-    value: "linkedin.com/in/nandkishore",
-    href: "https://linkedin.com/in/nandkishore",
+    value: "linkedin.com/in/nand-kishore18",
+    href: "https://www.linkedin.com/in/nand-kishore18/",
     icon: "💼",
     description: "Professional networking",
   },

@@ -5,7 +5,7 @@ import { Reveal } from "./Reveal";
 
 const socials = [
     { label: "GitHub", value: "Nandkishore-04", href: "https://github.com/Nandkishore-04" },
-    { label: "LinkedIn", value: "nand-kishore", href: "https://www.linkedin.com/in/nand-kishore-8b9093262/" },
+    { label: "LinkedIn", value: "nand-kishore", href: "https://www.linkedin.com/in/nand-kishore18/" },
 ];
 
 export default function ContactSection() {

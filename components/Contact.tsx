@@ -48,7 +48,7 @@ const links = [
     {
         label: "LinkedIn",
         value: "nand-kishore",
-        href: "https://www.linkedin.com/in/nand-kishore-8b9093262/",
+        href: "https://www.linkedin.com/in/nand-kishore18/",
         external: true,
         Icon: LinkedInIcon,
         iconBg: "#0A66C2",

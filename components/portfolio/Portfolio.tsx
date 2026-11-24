@@ -12,7 +12,7 @@ function SectionHeading({ title, note, count }: { title: string; note?: string; 
                     </span>
                 )}
             </h2>
-            {note && <span className="text-right text-xs text-ink/55">{note}</span>}
+            {note && <span className="hidden text-right text-xs text-ink/55 sm:inline">{note}</span>}
         </div>
     );
 }
@@ -30,12 +30,13 @@ export default function Portfolio() {
             {/* Nav */}
             <header className="sticky top-0 z-50 bg-ink text-white">
                 <nav className="mx-auto flex h-12 max-w-5xl items-center justify-between px-4 sm:px-6">
-                    <a href="#top" className="text-sm font-semibold">
-                        {profile.name}
+                    <a href="#top" className="shrink-0 text-sm font-semibold" aria-label={profile.name}>
+                        <span className="min-[380px]:hidden">NK</span>
+                        <span className="hidden min-[380px]:inline">{profile.name}</span>
                     </a>
-                    <ul className="flex gap-4 text-xs text-white/75 sm:gap-6 sm:text-sm">
+                    <ul className="flex gap-3 text-xs text-white/75 min-[380px]:gap-4 sm:gap-6 sm:text-sm">
                         {navLinks.map((l) => (
-                            <li key={l.href} className={l.label === "Experience" ? "hidden sm:block" : undefined}>
+                            <li key={l.href} className="whitespace-nowrap">
                                 <a href={l.href} className="hover:text-white">
                                     {l.label}
                                 </a>
@@ -47,7 +48,7 @@ export default function Portfolio() {
 
             {/* Hero */}
             <section id="top" className="border-b border-ink/10 bg-mist">
-                <div className="mx-auto grid max-w-5xl gap-8 px-4 py-16 sm:px-6 md:grid-cols-[1fr_auto] md:items-end md:py-20">
+                <div className="mx-auto grid max-w-5xl gap-8 px-4 py-12 sm:px-6 sm:py-16 md:grid-cols-[1fr_auto] md:items-end md:py-20">
                     <div>
                         <h1 className="font-display text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl">
                             AI engineer. I ship
@@ -80,7 +81,7 @@ export default function Portfolio() {
 
             {/* Projects */}
             <section id="projects" className="scroll-mt-12 border-b border-ink/10">
-                <div className="mx-auto max-w-5xl px-4 py-14 sm:px-6">
+                <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 sm:py-14">
                     <SectionHeading title="Projects" count={projects.length} note="Pick one to see how it works" />
                     <ProjectExplorer />
                 </div>
@@ -88,7 +89,7 @@ export default function Portfolio() {
 
             {/* Experience */}
             <section id="experience" className="scroll-mt-12 border-b border-ink/10">
-                <div className="mx-auto max-w-5xl px-4 py-14 sm:px-6">
+                <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 sm:py-14">
                     <SectionHeading title="Experience" note="Where I've shipped" />
                     <ol className="border border-ink/15 bg-white">
                         {experience.map((job) => (
@@ -128,17 +129,17 @@ export default function Portfolio() {
 
             {/* Skills + Education */}
             <section id="skills" className="scroll-mt-12">
-                <div className="mx-auto grid max-w-5xl gap-12 px-4 py-14 sm:px-6 md:grid-cols-2 md:gap-10">
+                <div className="mx-auto grid max-w-5xl gap-12 px-4 py-10 sm:px-6 sm:py-14 md:grid-cols-2 md:gap-10">
                     <div>
                         <SectionHeading title="Skills" note="What I build with" />
                         <dl className="border border-ink/15 bg-white">
                             {skills.map((s) => (
                                 <div
                                     key={s.area}
-                                    className="flex flex-col gap-1 border-b border-ink/10 px-4 py-3 last:border-b-0 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4"
+                                    className="grid gap-1 border-b border-ink/10 px-4 py-3 last:border-b-0 sm:grid-cols-[150px_1fr] sm:gap-4"
                                 >
                                     <dt className="text-sm font-semibold">{s.area}</dt>
-                                    <dd className="text-xs text-ink/65 sm:text-right">{s.items}</dd>
+                                    <dd className="text-xs leading-relaxed text-ink/65">{s.items}</dd>
                                 </div>
                             ))}
                         </dl>
@@ -159,7 +160,7 @@ export default function Portfolio() {
 
             {/* Contact */}
             <section id="contact" className="scroll-mt-12 bg-ink text-white">
-                <div className="mx-auto flex max-w-5xl flex-col gap-6 px-4 py-14 sm:px-6 md:flex-row md:items-center md:justify-between">
+                <div className="mx-auto flex max-w-5xl flex-col gap-6 px-4 py-10 sm:px-6 sm:py-14 md:flex-row md:items-center md:justify-between">
                     <div>
                         <h2 className="font-display text-2xl font-bold tracking-tight sm:text-3xl">
                             Hiring for AI/ML, GenAI or MLOps?
